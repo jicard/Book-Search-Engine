@@ -8,7 +8,7 @@ const { authMiddleware } = require("./utils/auth");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const host = '0.0.0.0';
+const host = process.env.host;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
