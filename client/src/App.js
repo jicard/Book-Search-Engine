@@ -37,7 +37,7 @@ function App() {
         <>
           <Navbar />
           <Routes>
-            <Route path="/books" element={<SearchBooks />} />
+            <Route path="/" element={<SearchBooks />} />
             <Route path="/saved" element={<SavedBooks />} />
             <Route
               path="*"
@@ -51,4 +51,3 @@ function App() {
 }
 
 export default App;
-// change "/books" to "/"
