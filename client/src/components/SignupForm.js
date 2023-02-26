@@ -3,6 +3,8 @@ import { Form, Button, Alert } from "react-bootstrap";
 import { ADD_USER } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
+import { LOGIN_USER } from "../utils/mutations";
+import LoginForm from "./LoginForm.js"
 
 const SignupForm = () => {
   // set initial form state
@@ -17,6 +19,7 @@ const SignupForm = () => {
   const [showAlert, setShowAlert] = useState(false);
 
   const [addUser] = useMutation(ADD_USER);
+  //const [loginUser] = useMutation(LOGIN_USER);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -32,7 +35,6 @@ const SignupForm = () => {
       event.preventDefault();
       event.stopPropagation();
     }
-
     try {
       const { data } = await addUser({ variables: { ...userFormData } });
 
@@ -40,7 +42,7 @@ const SignupForm = () => {
         throw new Error("something went wrong!");
       }
 
-      Auth.login(data.addUser.token);
+      Auth.login(data.addUser.token)
     } catch (err) {
       console.error(err);
       setShowAlert(true);
@@ -66,7 +68,6 @@ const SignupForm = () => {
         >
           Something went wrong with your signup!
         </Alert>
-
         <Form.Group>
           <Form.Label htmlFor="username">Username</Form.Label>
           <Form.Control
