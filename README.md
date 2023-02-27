@@ -27,4 +27,4 @@ Check out my GitHub profile! [jicard](https://github.com/jicard)
 Contact me via email @ icardj@outlook.com
 ## Link
 [Restricted Section Repo](https://github.com/jicard/Restricted-Section) <br />
-[Restricted Section on Heroku]()
+[Restricted Section on Heroku](https://restricted-section.herokuapp.com/)
